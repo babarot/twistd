@@ -55,8 +55,8 @@ words = [
   "yellow",
   "green",
 ]
-pid_file = "/var/log/twistd.log"
-log_file = "/var/run/twistd.pid"
+pid_file = "/var/log/twistd.pid"
+log_file = "/var/run/twistd.log"
 
 [slack]
 url = "https://hooks.slack.com/services/..."
