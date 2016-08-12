@@ -8,7 +8,7 @@ A daemon to filter with words you want to search from Tweets via Twitter Streami
 
 ## Usage
 
-```
+```console
 $ /etc/init.d/twistd start
 ```
 
@@ -25,14 +25,14 @@ status |
 
 There are twistd's interfaces.
 
-Options | Description
+Option | Description
 ---|---
 -c | Specify config file
 -f | Do not run as a daemon
 
 ## Installation
 
-```
+```console
 $ git clone https://github.com/b4b4r07/twistd /home/you
 $ cd /home/you/twistd
 $ sudo make install
