@@ -68,5 +68,5 @@ access_token_secret = "****************"
 ## TODOs
 
 - [x] Logging system
-- [ ] Pid Lock
-- [ ] Improve `run.sh` (init script)
+- [x] Pid Lock
+- [x] Improve `run.sh` (init script)
