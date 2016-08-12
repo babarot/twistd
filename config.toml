@@ -1,0 +1,20 @@
+[core]
+fore_ground = false
+words = [
+  "red",
+  "yellow",
+  "green",
+]
+log_file = "/var/log/twistd.log"
+pid_file = "/var/run/twistd.pid"
+
+[slack]
+url = "https://hooks.slack.com/services/..."
+username = "Twistd"
+icon_emoji = ":bird:"
+
+[twitter]
+consumer_key = "********"
+consumer_key_secret = "****************"
+access_token = "********"
+access_token_secret = "****************"
