@@ -10,7 +10,8 @@
 
 SCRIPT="twistd"
 RUNAS="root"
-# e.g. CMD="/Users/b4b4r07/src/github.com/b4b4r07/twistd/cmd/twistd/twistd -c $HOME/config.toml"
+# e.g.
+#CMD="/Users/b4b4r07/src/github.com/b4b4r07/twistd/cmd/twistd/twistd -c $HOME/config.toml"
 CMD="$SCRIPT"
 
 PIDFILE=/var/run/${SCRIPT}.pid
@@ -40,8 +41,17 @@ stop() {
     if [ $? -eq 0 ]; then
         echo -e "Starting $SCRIPT:              [\033[32m  OK  \033[m]"
     else
+
         echo -e "Starting $SCRIPT:              [\033[31m FAIL \033[m]"
     fi
+}
+
+status() {
+    if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE") &>/dev/null; then
+        echo "$SCRIPT is not running" >&2
+        return 1
+    fi
+    ps aux | grep "twistd" | grep -v "grep"
 }
 
 case "$1" in
@@ -57,7 +67,11 @@ case "$1" in
         stop && start
         exit $?
         ;;
+    status)
+        status
+        exit $?
+        ;;
     *)
-        echo "Usage: $0 {start|stop|restart|}"
+        echo "Usage: $0 {start|stop|restart|status}"
         exit 1
 esac
