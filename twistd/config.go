@@ -11,6 +11,10 @@ type ConfToml struct {
 }
 
 type SectionCore struct {
+	PidFile    string   `toml:"pid_file"`
+	LogFile    string   `toml:"log_file"`
+	Words      []string `toml:"words"`
+	ForeGround bool     `toml:"fore_ground"`
 }
 
 type SectionSlack struct {

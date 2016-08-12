@@ -27,7 +27,7 @@ func (cli *CLI) Run(args []string) (status int, err error) {
 	/*
 		//map[string]interface{}
 		twistd.Logger.Error(
-			twistd.Fields{
+			map[string]interface{}{
 				"child": *child,
 				//"message": fmt.Sprint(err),
 				"message": "error",

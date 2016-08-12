@@ -47,7 +47,11 @@ func incomingHooks(slackUrl string, s Slack) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(params))
+	Logger.Info(
+		map[string]interface{}{
+			"message": string(params),
+		},
+	)
 
 	if _, err := ioutil.ReadAll(resp.Body); err != nil {
 		return err
@@ -122,13 +126,7 @@ func (s *Slack) Post() error {
 	}
 
 	filterParams := &twitter.StreamFilterParams{
-		Track: []string{
-			"enhancd",
-			"hoge",
-			"tomato",
-			"word",
-			"zplug",
-		},
+		Track:         conf.Core.Words,
 		StallWarnings: twitter.Bool(true),
 	}
 	stream, err := client.Streams.Filter(filterParams)
