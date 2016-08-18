@@ -10,6 +10,7 @@ import (
 )
 
 type Slack struct {
+	Channel     string        `json:"channel"`
 	Text        string        `json:"text"`
 	Username    string        `json:"username"`
 	IconEmoji   string        `json:"icon_emoji"`

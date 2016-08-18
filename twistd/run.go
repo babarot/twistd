@@ -45,6 +45,7 @@ func (twistd *Twistd) Run() error {
 		if err := slack.Post(
 			conf.Slack.Url,
 			slack.Slack{
+				Channel:   conf.Slack.Channel,
 				Username:  conf.Slack.Username,
 				IconEmoji: conf.Slack.IconEmoji,
 				Attachments: []slack.Attachments{
