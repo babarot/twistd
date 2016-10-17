@@ -1,0 +1,30 @@
+hash: 3744c0d960ce5e47d1a514716f85faaa7e4c76140074879f20a02d8a37487b91
+updated: 2016-10-17T09:02:56.035462796+09:00
+imports:
+- name: github.com/BurntSushi/toml
+  version: bbd5bb678321a0d6e58f1099321dfa73391c1b6f
+- name: github.com/cenkalti/backoff
+  version: 8edc80b07f38c27352fb186d971c628a6c32552b
+- name: github.com/dghubble/go-twitter
+  version: 12e5387804e84bf20dc60ba964f59437553e16a6
+  subpackages:
+  - twitter
+- name: github.com/dghubble/oauth1
+  version: 70562a5920ad9b6ff03ef697c0f90ae569abbd2b
+- name: github.com/dghubble/sling
+  version: c961a4334054e64299d16f8a31bd686ee2565ae4
+- name: github.com/google/go-querystring
+  version: 9235644dd9e52eeae6fa48efd539fdc351a0af53
+  subpackages:
+  - query
+- name: github.com/Sirupsen/logrus
+  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+- name: golang.org/x/net
+  version: 8b4af36cd21a1f85a7484b49feb7c79363106d8e
+  subpackages:
+  - context
+- name: golang.org/x/sys
+  version: 002cbb5f952456d0c50e0d2aff17ea5eca716979
+  subpackages:
+  - unix
+testImports: []

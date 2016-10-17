@@ -1,22 +1,22 @@
+TARGETS_NOVENDOR := $(shell glide novendor)
+
 .DEFAULT_GOAL := help
 
-.PHONY: all build install uninstall help
+.PHONY: all serve build bundle fmt help
 
 all:
 
-build:
-	mkdir -p /var/log
-	mkdir -p /var/run
-	L="b4b4r07/twistd" bash -c "`curl -L git.io/releases`" -s "os"
+serve: bundle build ## Start to serve twistd
+	./twist
 
-install: build ## Install twistd and init script
-	@echo "Installing Components"
-	-@cp run.sh /etc/init.d/twistd
-	-@cp config.toml /etc/twistd.conf
-	-@cp cmd/twistd/twistd /etc/rc.d/init.d/twistd
+build: ## Build go binary
+	go build -o twist ./cmd/twistd
 
-uninstall: ## Uninstall twistd and init script
-	@echo "Uninstalling complete"
+bundle: ## Install packages via glide
+	glide install
+
+fmt: ## Run go fmt
+	@echo $(TARGETS_NOVENDOR) | xargs go fmt
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
