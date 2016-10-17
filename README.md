@@ -28,7 +28,6 @@ There are twistd's interfaces.
 Option | Description
 ---|---
 -c | Specify config file
--f | Do not run as a daemon
 
 ## Installation
 
