@@ -9,32 +9,20 @@ A daemon to filter with words you want to search from Tweets via Twitter Streami
 ## Usage
 
 ```console
-$ /etc/init.d/twistd start
+$ sudo make install    # copy config to /etc
+$ make serve
 ```
 
 ### Interfaces
 
-For more infomation, see also [`run.sh`](run.sh) and [`Makefile`](Makefile).
-
-Interface | Description
----|---
-start |
-stop |
-restart |
-status |
-
-There are twistd's interfaces.
-
 Option | Description
 ---|---
--c | Specify config file
+`-c` | Specify config file
 
 ## Installation
 
 ```console
-$ git clone https://github.com/b4b4r07/twistd /home/you
-$ cd /home/you/twistd
-$ sudo make install
+$ git clone https://github.com/b4b4r07/twistd
 ```
 
 ## Configuration
@@ -65,7 +53,7 @@ access_token_secret = "****************"
 
 ## License
 
-MIT
+[MIT](http://b4b4r07.mit-license.org)
 
 ## Author
 
