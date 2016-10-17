@@ -2,7 +2,7 @@ TARGETS_NOVENDOR := $(shell glide novendor)
 
 .DEFAULT_GOAL := help
 
-.PHONY: all serve build bundle fmt help
+.PHONY: all serve build bundle fmt help install
 
 all:
 
@@ -17,6 +17,10 @@ bundle: ## Install packages via glide
 
 fmt: ## Run go fmt
 	@echo $(TARGETS_NOVENDOR) | xargs go fmt
+
+install: bundle build ## Install command and config file
+	install -m 0755 ./twist /usr/bin
+	install -m 0644 ./config.toml /etc/twistd.conf
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
