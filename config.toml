@@ -17,3 +17,7 @@ consumer_key = "********"
 consumer_key_secret = "****************"
 access_token = "********"
 access_token_secret = "****************"
+ignore_users = [
+  "b4b4r07",
+  #214516923, one of these
+]

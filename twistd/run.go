@@ -35,6 +35,19 @@ func (twistd *Twistd) Run() error {
 	// Convenience Demux demultiplexed stream messages
 	demux := twitter.NewSwitchDemux()
 	demux.Tweet = func(tweet *twitter.Tweet) {
+		for _, user := range conf.Twitter.IgnoreUsers {
+			switch user.(type) {
+			case string:
+				if tweet.User.ScreenName == user {
+					return
+				}
+			case int64:
+				if tweet.User.ID == user {
+					return
+				}
+			}
+		}
+
 		var (
 			format = "Mon Jan 02 15:04:05 -0700 2006"
 			target = tweet.CreatedAt

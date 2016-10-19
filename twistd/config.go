@@ -27,10 +27,11 @@ type SectionSlack struct {
 }
 
 type SectionTwitter struct {
-	ConsumerKey       string `toml:"consumer_key"`
-	ConsumerKeySecret string `toml:"consumer_key_secret"`
-	AccessToken       string `toml:"access_token"`
-	AccessTokenSecret string `toml:"access_token_secret"`
+	ConsumerKey       string        `toml:"consumer_key"`
+	ConsumerKeySecret string        `toml:"consumer_key_secret"`
+	AccessToken       string        `toml:"access_token"`
+	AccessTokenSecret string        `toml:"access_token_secret"`
+	IgnoreUsers       []interface{} `toml:"ignore_users"`
 }
 
 func LoadConf(confPath string, confToml *ConfToml) error {
