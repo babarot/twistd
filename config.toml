@@ -21,3 +21,4 @@ ignore_users = [
   "b4b4r07",
   #214516923, one of these
 ]
+skip_retweet = false

@@ -32,6 +32,7 @@ type SectionTwitter struct {
 	AccessToken       string        `toml:"access_token"`
 	AccessTokenSecret string        `toml:"access_token_secret"`
 	IgnoreUsers       []interface{} `toml:"ignore_users"`
+	SkipRetweet       bool          `toml:"skip_retweet"`
 }
 
 func LoadConf(confPath string, confToml *ConfToml) error {

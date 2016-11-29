@@ -35,6 +35,11 @@ func (twistd *Twistd) Run() error {
 	// Convenience Demux demultiplexed stream messages
 	demux := twitter.NewSwitchDemux()
 	demux.Tweet = func(tweet *twitter.Tweet) {
+		if conf.Twitter.SkipRetweet {
+			if tweet.RetweetedStatus != nil {
+				return
+			}
+		}
 		for _, user := range conf.Twitter.IgnoreUsers {
 			switch user.(type) {
 			case string:
