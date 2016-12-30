@@ -71,7 +71,6 @@ func (twistd *Twistd) Run() error {
 						TitleLink:  "https://twitter.com/" + tweet.User.ScreenName + "/status/" + tweet.IDStr,
 						Text:       tweet.Text,
 						Footer:     "Twitter",
-						FooterIcon: "http://www.freeiconspng.com/uploads/twitter-icon-download-18.png",
 						TimeStamp:  fmt.Sprint(ts.Unix()),
 					},
 				},
